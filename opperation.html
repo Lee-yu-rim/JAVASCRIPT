@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .blue{
+            color: blue;
+        }    
+
+        .red{
+            color: red;
+            font-size: 20px;
+        }
+
+        table{
+            border-spacing: 0;
+        }
+        
+        .col1{
+            background-color: rgb(255, 213, 231);
+        }
+
+        .col2{
+            background-color: rgb(197, 253, 255);
+        }
+
+    </style>
+
+    <script>
+        //  연산자
+        // let num1 = 10;
+        // let num2 = 20;
+        // let name = '홍길동';
+        // let age = 20;
+
+        // document.write("이름 : " + name + "<br>" + "나이 : " + age + "<br>");
+
+        // document.write("num1 + num2 = " + (num1 + num2) + "<br>");  //문자열과 함께 결과를 출력할 때, 괄호를 통해 우선순위를 결정해줘야한다.
+
+        // let str = "<table border = '1'>";
+        // str += "<tr>";
+        // str += "<td>1</td><td>2</td><td>3</td>";
+        // str += "</tr>";
+        // str += "</table>";
+
+        // document.write(str);  //테이블 실행
+
+
+        //예제1
+        // let height = 180;
+        // let weight = 74;
+        
+        // let result = (height-100) * 0.9;
+
+        // document.write('적정체중 : ' + result + 'kg' + "<br>" + '초과 몸무게 : ' + (weight - result) + 'kg');
+
+
+        // let height = prompt("키를 입력하세요","0");
+        // let weight = prompt("몸무게를 입력하세요","0");
+
+        // let result = (height-100) * 0.9;
+
+        // document.write('적정체중 : ' + result + 'kg' + "<br>" + '초과 몸무게 : ' + (weight - result) + 'kg');
+
+        //예제2
+        // let price1 = 3000;
+        // let price2 = 6000;
+        // let price3 = 3000;
+
+        // let sum = price1 + price2 + price3;
+
+        // let result = sum > 10000 ? (sum-10000) + "원 초과" : "돈 관리 잘 했어요!";
+        // document.write(result + "<br>");
+        
+        //예제3
+        
+        // let sal = prompt("4분기 판매량을 입력하세요.","0");
+        // let avg = (1200 + 1300 + 1000)3;
+        // let result2 = sal >= avg ? "판매량이 평균 이상입니다." : "판매량이 평균 미달입니다.";
+
+        // document.write(result2);
+
+
+        //조건식
+        //0 -> false / 나머지 값 -> true
+        //null -> false
+        //""(빈문자) -> false / 나머지 값 -> true
+        //undefined - > false
+
+        // let num = 0;  
+        // if(num){
+        //     document.write(num);  //0 일때는 false로 판단하기 때문에 값이 출력되지 않음
+        // }
+
+        // if("hello"){
+        //     document.write("Hello World!")
+        // }
+
+        // let result = confirm("정말 파일을 삭제 하시겠습니까?");  //확인 : true 반환 / 취소 : false 반환
+
+        // if(result){
+        //     document.write("파일이 삭제되었습니다.");
+        // }else{
+        //     document.write("작업이 취소되었습니다.");
+        // }
+
+        // let site = prompt("네이버,다음,네이트,구글 중 즐겨 사용하는 사이트는?","");
+
+        // switch(site){
+        //     case "구글" : url = "www.google.com";
+        //     break;
+        //     case "다음" : url = "www,daum.net";
+        //     break;
+        //     case "네이버" : url = "www.naver.com";
+        //     break;
+        //     case "네이트" : url = "www.nate.com";
+        //     break;
+        //     default: alert("보기 중에 없는 사이트입니다.")
+        // }
+
+        // if(url){
+        //     location.href = "http://" + url;
+        // }
+
+
+        //반복문 : for , while , do-while
+
+        // 변수
+        // while(변수로 조건식)
+        //     실행문
+        //     변수를 사용한 증감식
+
+        // let i = 30;
+
+        // while(i>=10){
+        //     if(i%2 == 0){
+        //         document.write("<p class='blue'>" + i + "</p>");
+        //     }else{
+        //         document.write("<p class='red'>" + i + "</p>");
+        //     }
+        //     i--;
+        // }
+
+        // let i = 1;
+        // while(i<=9){
+        //     document.write("5X" + i + "=" + i*5,"<br />");
+        //     i++;
+        // }
+
+        // let num = 1;
+        // let t = "<table border = '1'>";
+
+        // for(let i=1;i<=5;i++){
+        //     t += "<tr>";
+        //     for(let j=1;j<=5;j++){
+        //         if(i % 2 == 1){
+        //             t += "<td class = 'blue'>" + num + "</td>";
+        //         }else{
+        //             t += "<td class = 'red'>" + num + "</td>";
+        //         }
+
+        //         num++;
+        //     }
+        //     t += "</tr>";
+        // }
+
+        // t += "</table>";
+
+        // document.write(t);
+
+
+
+        document.write("<h1>구구단표</h1>");
+        document.write("<table width = 50%>");
+
+        for(let i=1;i<=9;i++){
+            if(i % 2 == 1){
+                document.write("<tr class='col1'>");
+            }else{
+                document.write("<tr class='col2'>");
+            }
+            
+            for(let j=1;j<=9;j++){
+                document.write("<td>" + (i*j) + "</td>");
+            }
+            document.write("</tr>");
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 스크립트의 목적 : 태그 제어 -->
+
+    <!-- 1. 경고창 띄우기 : script 안에서 작성하는 방식 => body에 사용하는 것도 동일 -->
+    <!-- 
+    <script>
+        alert("hello world!!")
+    </script> -->
+
+    <!-- 2. 경고창 띄우기 : 외부 파일 참조하는 방식 -->
+    <!-- <script src="myscript.js"></script> -->
+
+    <script>
+        //document.write("환영합니다.");  //<body> 브라우저 화면에 결과를 출력하는 역할
+
+        // 문자
+        // 숫자
+        // 날짜
+        // 논리형
+
+        // ES6 변수선언 방식
+        // - var,let,const
+        
+        // var 변수 
+        //1. 타입체크 x
+        //2. 동일 이름으로 변수 사용 가능  
+        //3. 호이스팅 가능
+        //4. 전역 변수
+        var age;
+        age = 10;
+        document.write(age);
+        document.write("<br>");   //줄바꿈 문자
+
+        age = 20;
+        document.write(age + "<br>");  //출력과 줄바꿈
+
+        age = "Hello";    //var 형식은 타입 체크를 하지 않는다.
+        document.write(age + "<br>");
+        
+        var age = "안녕";  //동일한 이름으로 변수 여러번 선언 가능
+        document.write(age + "<br>");
+
+        var name;  //undefined
+        document.write(name + "<br>");
+
+        name = "홍길동";   //var로 선언된 변수의 호이스팅(hoisting) : 값을 뒤에서 입력해도 앞으로 끌고와서 출력함
+        name = '이순신';   //변수는 대소문자 구분
+
+
+        // let 변수 
+        //1. 타입체크 x 
+        //2. 동일 이름 변수 사용 불가
+        //3. 호이스팅 불가
+        //4. 블록레벨 스코프(지역 변수)
+        let num;
+        num = 1;
+        document.write(num + "<br>");
+
+        num = 100;
+        document.write(num + "<br>");
+
+        num = "홍길동";   //타입체크 X
+        document.write(num + "<br>");
+
+        let num2;  //동일 이름 변수 사용 불가능
+        num = 1000;
+        document.write(num + "<br>");
+
+
+        //var vs let
+
+        var x = 1;  
+
+        if(true){
+            var x = 5;    //전역변수
+        }
+
+        document.write(x + "<br>");   //x = 5
+
+        ///////////
+
+        let y = 1;
+
+        if(true){
+            let y = 5;   
+        }
+
+        document.write(y + "<br>");   //y = 1
+        //블록을 벗어난 y의 값은 1이다. => 블록안의 y와 바깥의 y는 다른 y로 구분됨
+
+
+        //const 변수
+        //1. 상수
+        //2. 동일 이름 변수 사용 불가
+        const name2 = 'hong';
+        document.write(name2 + "<br>");
+
+        // const name2 = 'kim';  //error
+        // document.write(name2 + "<br>");
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+    <!-- 3. 경고창 띄우기 : 태그에 직접 주는 방식(임베디드) -->
+    <!-- <button type="button" onclick="javascript:alert('Hello world!!');">경고창 실행</button> -->
+
+</body>
+</html>
