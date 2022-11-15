@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        // $(document).ready(function(){
+        $(function(){
+            //제이쿼리문에서 요소를 가져오는 방식 & 속성을 부여하는 방식
+            // $("#txt").css("color","red");   //아이디 선택자
+            // $(".tit").css("color","blue");  //클래스 선택자
+            // $("h2").css("color","green");   //요소명 선택자
+            // $("h1,h2").css("background-color","yellow");  //그룹 선택자
+            // $("h3.tit").css("border","1px solid black");  //종속 선택자
+            // $("h1").parent().css("border","1px solid red");  //부모 요소 선택자
+            // $("#inner_wrap h1").css("color","blue");   //하위 요소 선택자 -> 선택한 하위요소만 변경
+            // $("#inner_wrap > p").css("color","pink");  //자식 요소 선택자 -> 자식 요소 중 해당하는 요소 모두를 변경
+            // $("h1").next().css("color","red");  //동생 요소 선택자
+            // $("h1").prev().css("color","green");   //형 요소 선택자
+            // $("h1").prev().css({"color":"red","font-size":"40px"});   //요소에 두가지 이상의 속성을 주는 방식
+            // $("h1").prevAll().css({"color":"red","font-size":"40px"});  //모든 형 요소에 속성 부여
+            // $("h1").nextAll().css({"color":"green","font-size":"40px"});   //모든 동생 요소에 속성 부여
+            $("h1").siblings().css({"color":"red","font-size":"40px"});  //형 동생 요소 모두 속성 부여
+        });
+    </script>
+</head>
+<body>
+    <div id="inner_wrap">
+        <p id="txt">JQuery Start</p>
+        <p class="tit">Class selector</p>
+        <h1>그룹 선택자</h1>
+        <h2>요소 선택자</h2>
+        <h3 class="tit">종속 선택자</h3>
+    </div>
+
+    <!-- <script>
+        $("#txt").css("color","red")  
+    </script> -->
+</body>
+</html>
