@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // widow.onload = function(){}   //위쪽에 script를 사용하려면 이 구문을 작성해야함
+    </script>
+</head>
+<body>
+    <!-- DOM : body영역 안에 있는 태그(객체)를 script 안에서 제어 -->
+
+    <!-- <h1 id="selector">선택자</h1> -->
+
+    <h1>선호하는 음식</h1>
+    <div id="food_1">
+        <h2 id="title">한식</h2>
+        <ol>
+            <li id="kimchi">
+                <a href="#">김치</a>
+            </li>
+            <li>불고기</li>
+            <li>비빔밥</li>
+        </ol>
+    </div>
+
+    <div id="food_2">
+        <h2>양식</h2>
+        <ol id="list">
+            <li>돈까스</li>
+            <li id="pizza">피자</li>
+            <li>파스타</li>
+        </ol>
+    </div>
+
+    <p id="info">안녕하세요 dom 입니다.</p>
+
+    <button tyoe="button" onclick="change()">p태그 배경색 넣기</button>
+
+    <script>
+        // getElementById(ID명)
+        // let hTag = document.getElementById("selector");   
+        // hTag.style.color = "red";
+        // hTag.style.fontSize = "50px";
+
+        // getElementsByTagName(태그명) => 값을 배열형식으로 반환
+        // let hTag = document.getElementsByTagName("h1");
+        // hTag[0].style.color = "green";
+        // =
+        // document.getElementsByTagName("h1")[0].style.color = "green";
+
+        let myList = document.getElementById("food_1").getElementsByTagName("li")   //food_1안에 하위에 있는 li태그
+        myList[1].style.backgroundColor = "aqua";
+
+        let pbody = document.getElementById("info").innerHTML;   //대상의 몸통부분을 가져옴
+        console.log(pbody);   //내용이 콘솔말고 창에 보임
+
+        document.getElementById("info").innerHTML = "Hi DOM"; 
+
+        function change(){
+            let pTag = document.getElementById("info");
+            pTag.style.backgroundColor = "pink";
+        }
+
+    </script>
+</body>
+</html>

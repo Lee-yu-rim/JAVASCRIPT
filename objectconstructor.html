@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 객체란?
+        // 내장 객체 , BOM , 사용자 정의 객체 , DOM
+        // 이름(key, name)과 값(value)로 구성된 프로퍼티(property)의 집합
+        // 원시타입(primitive type)을 제외한 모든 것이 객체(Object)로 정의된다.
+
+        // 사용자 정의 객체
+
+        // 객체의 정의와 프로퍼티 참조 방식
+        // 1. object.property (Dot Notation)
+        // 2. object['property'] (Bracket Notation)
+
+        //객체의 정의
+        // let obj = {      // *let obj = [] 배열 선언
+        //     //속성:값(key:value)
+        //     cat:"mcow",
+        //     dog:"woof"
+        // }     
+
+        //객체의 사용(참조)
+        //dot nocation 방식
+        // console.log(obj.cat);
+        // console.log(obj.dog);
+
+        //bracket notation 방식
+        // console.log(obj["cat"]);   //key 값을 쓸 때 문자열로 입력
+        // console.log(obj["dog"]);
+
+        //두가지 방식의 차이점 : bracket은 안에 변수를 담을 수 있다.
+        // let cat = "cat";
+        // let dog = "dog";
+
+        // console.log(obj[cat]);  
+        // console.log(obj[dog]);
+
+        //객체 안에서의 함수 정의
+        // let obj = {
+        //     cat:"mcow",
+        //     dog:"woof",
+        //     animal:function(){
+        //         return `현재 동물을 ${this.cat}과 ${this.dog}이 있다.`     //탬플릿 형식을 통해 문자열과 변수를 함께 사용 가능
+        //     }
+        // }
+        
+        // console.log(obj.animal());
+
+        // let obj = {
+        //     cat:"mcow",
+        //     dog:"woof"
+        // }
+
+        // 객체 값 추가
+        // obj.cow = "moo";
+        // obj["pig"] = "oink";
+        // console.log(obj.cow);
+        // console.log(obj.pig);
+
+        //객체 값 삭제
+        // delete obj.cat;
+        // console.log(obj.cat);   // = undefined
+
+        //객체 값 수정
+        // obj.cat = "maw";
+        // console.log(obj.cat);
+
+        //객체 데이터 조회
+        //for in 
+        // for(let key in obj) {
+        //     console.log(`key는 ${key}, value는 ${obj[key]}입니다.`);
+        // }
+
+        //객체 생성 방식1
+        //new Object()
+        //- 값이 없는 빈 객체 생성
+
+        // let animal = new Object();
+        // animal.cat = "meow";
+        // animal.dog = "woof";
+        // animal.cow = "moo";
+
+        // console.log(animal.dog);
+
+        //객체 생성 방식2
+        //객체 생성자 함수 
+        //- 생성을 통해 사용해야 한다. (new)
+
+        // function Animal(name,sound){
+        //     //생성자 안에서의 값의 초기화
+        //     this.name = name;
+        //     this.sound = sound;
+
+        //     //메소드 생성
+        //     this.animal = function(){
+        //         return `현재 동물을 ${this.name}과 ${this.sound}이 있다.`;
+        //     }
+        // }
+
+        // let cat = new Animal("cat","meow");
+        // let dog = new Animal("dog","woof");
+
+        // console.log(cat.animal());
+        // console.log(dog.animal());
+
+
+        // 예제
+        // function CheckWeight(name,height,weight){
+        //     this.name = name;
+        //     this.height = height;
+        //     this.weight = weight;
+        //     this.minweight;
+        //     this.maxweight;
+
+        //     this.getinfo = function(){
+        //         return `이름: ${this.name}, 키: ${this.height}, 몸무게: ${this.weight} <br>`;
+        //     }
+
+            // this.getinfo = function(){
+            //     let str = ""
+            //     str += "이름: " + this.name + ", ";
+            //     str += "키: " + this.height + ", ";
+            //     str += "몸무게: " + this.weight + "<br>";
+            //     return str;
+            // }
+
+        //     this.getresult = function(){
+        //         this.minweight = (this.height - 100) * 0.9 - 5;
+        //         this.maxweight = (this.height - 100) * 0.9 + 5;
+
+        //         if(this.weight >= this.minweight && this.weight <= this.maxweight) {
+        //             return "정상 체중입니다. <br>";
+        //         }else if(this.weight < this.minweight) {
+        //             return "저체중 입니다.";
+        //         }else {
+        //             return "과체중 입니다.";
+        //         }
+        //     }
+        // }
+
+        // let jang = new CheckWeight("장보리",168,62);
+        // let park = new CheckWeight("박달재",180,88);
+
+        // console.log(jang);
+        // console.log(park);
+
+        // document.write(jang.getinfo());
+        // document.write(jang.getresult());
+
+        // document.write(park.getinfo());
+        // document.write(park.getresult());
+
+
+
+        // 프로토타입을 통해 작성하는 방법 => 메모리의 효율성을 높임
+        function CheckWeight(name,height,weight){
+            this.name = name;
+            this.height = height;
+            this.weight = weight;
+            this.minweight;
+            this.maxweight;
+        }
+
+        CheckWeight.prototype.getinfo = function(){
+            return `이름: ${this.name}, 키: ${this.height}, 몸무게: ${this.weight} <br>`;
+            }
+
+        CheckWeight.prototype.getresult = function(){
+            this.minweight = (this.height - 100) * 0.9 - 5;
+            this.maxweight = (this.height - 100) * 0.9 + 5;
+
+            if(this.weight >= this.minweight && this.weight <= this.maxweight) {
+                return "정상 체중입니다. <br>";
+            }else if(this.weight < this.minweight) {
+                return "저체중 입니다.";
+            }else {
+                return "과체중 입니다.";
+            }
+        }
+
+        let jang = new CheckWeight("장보리",168,62);
+        let park = new CheckWeight("박달재",180,88);
+
+        console.log(jang);
+        console.log(park);
+
+        document.write(jang.getinfo());
+        document.write(jang.getresult());
+
+        document.write(park.getinfo());
+        document.write(park.getresult());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
