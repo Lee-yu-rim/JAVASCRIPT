@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //단독 이벤트
+            // $(".btn1").click(function(){
+            //     $(".btn1").parent().next().css("color","red");  //btn1의 부모인 <p>태그의 형제-> <p>내용1</p>
+            // });
+
+            //그룹 이벤트
+            // $(".btn2").on({
+            //     "mouseover focus":function(){
+            //         $(".btn2").parent().next().css("color","green");
+            //     }
+            // })
+
+            //이벤트 삭제
+            // $(".btn1").off("click");
+            // $(".btn2").off("mouseover focus");
+
+            //태그가 가진 기본 이벤트 제거 및 변경 
+            //- <a> , <form> 태그의 click 이벤트 적용시 기본 이벤트 속성을 제거해야함
+            // $(".btn1").on("click",function(e){
+            //     e.preventDefault();  //a태그의 기본 이벤트 제거
+            //     $(".txt1").css("color","red");
+            // });
+
+            // $(".btn2").on("click",function(){
+            //     $(".txt2").css("color","blue");
+            //     return false;   //a태그의 기본 이벤트 제거
+            // });
+
+            // $(".btn3").on("dblclick",function(){
+            //     $(".txt3").css("color","pink");
+            // });
+
+            // mouseover() / mouseout() => hover( = mouseover + mouseout) => 대상에 정확히 올라가야 이벤트 발생
+            // mouseenter() / mouseleave()  => 대상의 부모영역까지 포함하여 올라가도 이벤트 발생
+
+            // $(".btn1").on({
+            //     "mouseover":function(){
+            //         $(".txt1").css("color","red");
+            //     },
+            //     "mouseout":function(){
+            //         $(".txt1").css("color","black");
+            //     }
+            // });
+
+            // $(".btn2").hover(
+            //     function(){    //over
+            //         $(".txt2").css("color","red");
+            //     },
+            //     function(){   //out
+            //         $(".txt2").css("color","black");
+            //     }
+            // );
+
+            //mousemove() - 마우스 포인터의 좌표값 반환
+            // - 선택자 document
+            // $(document).on("mousemove",function(e){
+            //     $(".posX").text(e.pageX);
+            //     $(".posY").text(e.pageY);
+
+            //     //text() - 일반태그에서 값을 읽어올 때 
+            //     //val() - 입력폼태그에서 값을 읽어올 때
+            // });
+
+            //scroll() - 스크롤의 좌표값 반환
+            //- 선택자 window 
+            // $(window).on("scroll",function(){
+            //     let sc_top = $(this).scrollTop();  //this -> window
+            //     let sc_left = $(this).scrollLeft();
+
+            //     $(".top").text(sc_top);
+            //     $(".left").text(sc_left);
+
+            //     if(sc_top <= 200){
+            //         $("body").css("background-color","pink");
+            //     }else if(sc_top <= 500){
+            //         $("body").css("background-color","green");
+            //     }else if(sc_top <= 2000){
+            //         $("body").css("background-color","orange");
+            //     }
+            // });
+
+            //focus() - 해당 포커스에 맞춰질 때 / blur() - 해당 포커스가 다른 곳으로 옮겨질 때
+            // $("#user_id_1").on("focus",function(){
+            //     $(this).css("background-color","pink");
+            // });
+
+            // $("#user_id_1").on("blur",function(){
+            //     $(this).css("background-color","blue");
+            // });
+
+            //change() - 값을 변경함 
+            // - blur()이벤트가 발생하는 순간 change()이벤트가 발생
+            // $("#rel_site").on("change",function(){
+            //     $(".txt").text($(this).val());
+            // });
+
+            // $("#id").on("change",function(){
+            //     $(".txt").text($(this).val());
+            // });
+
+            //keydown() 
+            // let words = ["돈","부자","천재"];
+            
+            // $("#id").on("keydown",function(){
+            //     let term = $(this).val();
+            //     $(".txt").text(term);
+
+            //     for(let i=0;i<3;i++){
+            //         if(term == words[i]){
+            //             $(".txt").text("사용이 불가한 단어입니다.");
+            //         }
+            //     }
+            // });
+
+
+
+        });
+    </script>
+    <style>
+        /* body {
+            height: 10000px;
+            width: 5000px;
+        }
+
+        #wrap{
+            position: fixed;
+            left: 10px;
+            top: 10px;
+        } */
+    </style>
+</head>
+<body>
+    <!-- <p>
+        <button class="btn1">버튼1</button>
+    </p>
+    <p>내용1</p>
+    <p>
+        <button class="btn2">버튼2</button>
+    </p>
+    <p>내용2</p> -->
+
+    <!-- <p>
+        <a href="http://www.easyspub.co.kr/" class="btn1">버튼1</a>
+    </p>
+    <p class="txt1">내용1</p>
+    <p><a href="http://www.easyspub.co.kr/" class="btn2">버튼2</a></p>
+    <p class="txt2">내용2</p>
+    <p><button class="btn3">버튼3</button></p>
+    <p class="txt3">내용3</p> -->
+
+    <!-- <p>
+        <button class="btn1">Mouse Over/Mouse Out</button>
+    </p>
+    <p class="txt1">내용1</p>
+    <p>
+        <button class="btn2">Hover</button>
+    </p>
+    <p class="txt2">내용2</p> -->
+
+    <!-- <h1>mousemove</h1>
+    <p>X : <span class="posX">0</span>px</p>
+    <p>Y : <span class="posY">0</span>px</p> -->
+
+    <!-- <div id="wrap">
+        <p>scrollTop: <span class="top">0</span>px</p>
+        <p>scrollLeft: <span class="left">0</span>px</p>
+    </div> -->
+
+    <!-- <form action="#">
+        <p>
+            <label for="user_id_1">ID</label>
+            <input type="text" name="user_id_1" id="user_id_1">
+        </p>
+    </form> -->
+
+    <!-- <input type="text" name="id" id="id">
+    <br>
+    <select id="rel_site">
+        <option value="">사이트 선택</option>
+        <option value="www.google.com">구글</option>
+        <option value="www.naver.com">네이버</option>
+        <option value="www.daum.net">다음</option>
+    </select>
+    <p class="txt"></p> -->
+
+    <h1>금지어 필터링</h1>
+    <label>댓글 : </label>
+    <input type="text" name="id" id="id">
+    <p class="txt"></p>
+
+</body>
+</html>

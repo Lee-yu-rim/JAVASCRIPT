@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //객체(태그) 편집 메소드 - 객체 추가 / 복제 / 삭제 / 수정
+
+            //객체 추가 
+            //1. 기존 요소를 앞에 작성하고 추가되는 요소를 뒤에 작성
+            //2. 추가되는 요소를 앞에 작성하고 기존 요소를 뒤에 작성 
+
+            // after() / insertAfter() / before() / insertBefore() 메소드 
+            // 1번 형식
+            $("#wrap p:eq(2)").after("<p>After</p>");   //after() / insertAfter() : 대상의 뒷쪽에 요소 삽입
+            $("#wrap p:eq(1)").before("<p>Before</p>");   //before() / insertBefore() : 대상의 앞쪽에 요소 삽입
+
+            // 2번 형식
+            $("<p>insertBefore</p>").insertBefore("#wrap p:eq(0)");
+
+
+            //append() / appendTo() / prepend() / prependTo() 메소드
+            $("<li>appendTo</li>").appendTo("#listZone");  //append() / appendTo() : 항상 맨 앞쪽에 요소 삽입
+            $("#listZone").prepend("<li>prepend</li>");  //prepend() / prependTo() : 항상 맨 뒷쪽에 요소 삽입
+
+
+            //객체 복제 & 삭제
+            //clone() / empty() / remove() 메소드 
+            //clone - true : 모든 하위요소 복제 / flase : 선택 요소만 복제(기본값)
+            //empty : 선택 요소의 하위요소 모두 삭제
+            //remove : 선택 요소만 삭제
+
+            // let objCopy = $(".box1").children().clone();
+            // $(".box2").remove();  //box2의 <div>와 <p>태그 모두 삭제됨
+            // $(".box3").empty();   //box3의 하위요소인 <p>태그만 삭제됨
+            // $(".box3").append(objCopy);  //box3에 내용 12가 추가됨
+
+            
+            //객체 수정
+            //replaceAll() / replaceWith() 메소드
+
+            // $("h2").replaceWith("<h3>replaceWith</h3>");
+            // $("<p>raplaceAll</p>").replaceAll("div");
+
+
+            //unwrap() / wrap() / wrapAll() / wrapInner() 메소드
+            $("strong").unwrap();  //strong태그를 감싸고 있던 h1태그가 삭제됨
+            $(".ct1").wrap("<div />");   //ct1 p태그가 div로 각각 감싸짐
+            $(".ct2").wrapAll("<div />");  //전체 ct2 p태그가 div로 한번에 감싸짐
+            $("li").wrapInner("<h3 />");   //li의 하위요소가 h3로 감싸짐
+
+        });
+    </script>
+</head>
+<body>
+    <!-- <div id="wrap">
+        <p>내용1</p>
+        <p>내용2</p>
+        <p>내용3</p>
+    </div>
+
+    <ul id="listZone">
+        <li>리스트</li>
+    </ul> -->
+
+    <!-- <div class="box1">
+        <p>내용1</p>
+        <p>내용2</p>
+    </div>
+    <div class="box2">
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+    <div class="box3">
+        <p>내용5</p>
+        <p>내용6</p>
+    </div> -->
+
+    <!-- <section class="box1">
+        <h2>제목1</h2>
+        <div>내용1</div>
+        <div>내용2</div>
+    </section>
+    <section class="box2">
+        <h2>제목2</h2>
+        <div>내용3</div>
+        <div>내용4</div>
+    </section> -->
+
+    <h1 id="tit_1">
+        <strong>객체 조작 및 생성</strong>
+    </h1>
+    <p class="ct1">내용1</p>
+    <p class="ct1">내용2</p>
+    <p class="ct2">내용3</p>
+    <p class="ct2">내용4</p>
+    <ul>
+        <li>내용3</li>
+        <li>내용4</li>
+    </ul>
+    
+</body>
+</html>
